@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Biodata Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Form Flask App</h1>
+    
+    <!-- buat input -->
+    <form action="/greet" method="POST">
+        <input type="text" name="name" placeholder="Nama kamu siapa?" required>
+        <input type="text" name="lagu" placeholder="Lagu kesukaan kamu apa?" required>
+        <input type="text" name="hobi" placeholder="Hobi kamu apa?" required>
+        <button type="submit">Kirim</button>
+    </form>
+
+    <!-- hasil outputnya ini -->
+    {% if name %}
+    <div class="card">
+        <h3>Tanda Pengenal:</h3>
+        <p><strong>Nama:</strong> {{ name }}</p>
+        <p><strong>Lagu Kesukaan:</strong> {{ lagu }}</p>
+        <p><strong>Hobi:</strong> {{ hobi }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
