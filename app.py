@@ -1,16 +1,14 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/greet", methods=["POST"])
-def greet():
-    name = request.form.get("name")
-    if not name:
-        name = "Anonim"
-    return render_template("index.html", hasil=f"Halo, {name}! Selamat datang di Flask First App")
+@app.route('/proses', methods=['POST'])
+def proses():
+    nama = request.form['nama']
+    return render_template('index.html', nama=nama)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

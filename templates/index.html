@@ -1,17 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Flask App First</title>
+  <meta charset="utf-8">
+  <title>Form POST Flask First APP</title>
 </head>
 <body>
-    <h1>Flask App First<h1>
-    <form action="/greet" method="POST">
-        <input type="text" name="name" placeholder="Masukkan nama kamu di sini, yah." required>
-        <button type="submit">Kirim</button>
+  <div class="kotak">
+    <h1>Form POST</h1>
+
+    <form method="post" action="{{ url_for('proses') }}">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" placeholder="Tulis Nama Kamu" required>
+      <button type="submit">Kirim</button>
     </form>
-    {% if hasil %}
-        <p>{{ hasil }}</p>
+
+    {% if nama %}
+    <p class="hasil">Halo, {{ nama }}!</p>
     {% endif %}
+  </div>
 </body>
 </html>
